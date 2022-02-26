@@ -14,17 +14,15 @@
     <!--highscore page link-->
     <div id="highscores"><a href="./highscores.html">View High Scores</a></div>
     <div id="timer">Time: <span id="time">0</span></div>
-    <div id="intro-container">
-        <div class="intro container">
+    <div>
+        <div class="intro container" id="intro-container">
             <h1 id="intro-title">Coding Quiz Challenge</h1>
             <p id="intro-p">Try to answer the following code-related questions within the time limit. Keep in mind that inncorrect answers will penalize your time by ten seconds! Your remaining time will result in your highscore. Break a finger!</p>
             <button class="btn" id="start-btn">Start Quiz</button>
         </div>
-        <div class="hide" id="questions-container">
-            <div class="questions container">
-                <div id="question"></div>
-                <div class="btn-grid" id="answers"></div>
-            </div>
+        <div class="questions hide" id="questions">
+            <div id="question"></div>
+            <div class="btn-grid" id="answers"></div>
         </div>
         <div class="hide" id="end-container">
             <div class=" end container">
@@ -37,8 +35,6 @@
                     </p>
                 </form>
             </div>
-            <div class="hide" id="correct">Correct ✅</div>
-            <div class="hide" id="correct">Incorrect ❌</div>
         </div>
     </div>
     <script src="./assets/js/script.js"></script>
