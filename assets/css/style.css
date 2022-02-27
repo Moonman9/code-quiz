@@ -1,0 +1,114 @@
+* {
+    box-sizing: border-box;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: var(--white);
+}
+
+:root {
+    --primary: #898989;
+    --secondary: #a9a9a9;
+    --accent: #cacaca;
+    --white:#ffffff;
+    --black:#000000;
+    --incorrect: #FF9494;
+    --correct: #00FF00;
+}
+
+body {
+    background-color: var(--secondary);
+    padding: 0;
+    margin: 0;
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
+body.correct {
+    background-color: var(--correct);
+}
+body.incorrect {
+    background-color: var(--incorrect);
+}
+a {
+    text-decoration: none;
+}
+h1 {
+    text-align: center;
+}
+p {
+    text-align: center;
+}
+button {
+    display: inline-block;
+    margin: 5px;
+    cursor: pointer;
+    font-size: 100%;
+    background-color: var(--accent);
+    border-radius: 5px;
+    padding: 2px 10px;
+    color: var(--white);
+    border: 0;
+    -webkit-text-stroke-width: .5px;
+    -webkit-text-stroke-color: var(--black);
+}
+button:hover {
+    background-color: var(--black);
+}
+input[type="text"] {
+    font-size: 100%;
+    color: var(--black);
+}  
+ol {
+    padding-left: 0px;
+    max-height: 400px;
+    overflow: auto;
+}
+li {
+    padding: 5px;
+    list-style: decimal inside none;
+    color: white;
+}
+li:nth-child(odd) {
+    background-color: white;
+    color: black;
+}
+.hide {
+    display: none;
+}
+.container {
+    width: 800px;
+    max-width: 80%;
+    background-color: var(--primary);
+    padding: 15px 15px 25px 15px;
+    border-radius: 15px;
+    box-shadow: 0 0 10px 2px;
+    position: relative;
+}
+.btn {
+    background-color: var(--accent);
+    margin: 0;
+    position: absolute;
+    left: 45%;
+    bottom: 10px;
+    border-radius: 20px;
+    -webkit-text-stroke-width: .5px;
+    -webkit-text-stroke-color: var(--black);
+}
+.btn:hover {
+    background-color: var(--black);
+}
+.options button {
+    display: block;
+}
+#highscore {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+}
+#timer {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+

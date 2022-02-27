@@ -2,21 +2,44 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <!--Required for mobile optimization-->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--tab title-->
     <title>Code Quiz</title>
+    <!--link to style page-->
     <link rel="stylesheet" href="./assets/css/style.css">
 </head>
-<body>
-    <header>
-        <ul>
-            <li id="highscore">View High Score</li>
-            <li id="timer">Time: <span id="clock">0</span> </li>
-        </ul>
-    </header>
-    <main>
-        <h1>Coding Quiz Game</h1>
-        <p>Try to answer the following code-related</p>
-    </main>
+<body id="body">
+    <!--highscore page link-->
+    <div id="highscore"><a href="./highscores.html">View High Scores</a></div>
+    <div id="timer">Time: <span id="time">0</span></div>
+    <div>
+        <div class="intro container" id="intro-container">
+            <h1 id="intro-title">Coding Quiz Challenge</h1>
+            <p id="intro-p">Try to answer the following code-related questions within the time limit. Keep in mind that inncorrect answers will penalize your time by ten seconds! Your remaining time will result in your highscore. Break a finger!</p>
+            <button class="btn" id="start-btn">Start Quiz</button>
+        </div>
+        <div class="hide" id="questions">
+            <div class="questions container">
+                <div id="question"></div>
+                <div class="btn-grid" id="options"></div>
+            </div>
+        </div>
+        <div class="hide" id="end-container">
+            <div class=" end container">
+                <h1 id="end-title">All done!</h1>
+                <p id="end-p">Your final score is <span id="score"></span>.</p>
+                <form id="initials-entry">
+                    <p id="initial-prompt">Enter initials:
+                        <input type="text" name="initials" id="initials" max="3"/>
+                        <button type="submit" class="btn" id="submit-btn">Submit</button>
+                    </p>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="./assets/js/script.js"></script>
+    <script src="./assets/js/questions.js"></script>
 </body>
 </html>
