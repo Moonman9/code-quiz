@@ -1,4 +1,4 @@
-// list of all questions, options, and answers
+// list of all questions, options, and answers and stored as values
 var questions = [
     {
       title: "String values must be enclosed within ____ when being assigned to variables.",

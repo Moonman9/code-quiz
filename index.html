@@ -15,17 +15,20 @@
     <div id="highscore"><a href="./highscores.html">View High Scores</a></div>
     <div id="timer">Time: <span id="time">0</span></div>
     <div>
+        <!--introduction container that shows on initial load-->
         <div class="intro container" id="intro-container">
             <h1 id="intro-title">Coding Quiz Challenge</h1>
             <p id="intro-p">Try to answer the following code-related questions within the time limit. Keep in mind that inncorrect answers will penalize your time by ten seconds! Your remaining time will result in your highscore. Break a finger!</p>
             <button class="btn" id="start-btn">Start Quiz</button>
         </div>
+        <!--hidden container for question variablesm-->
         <div class="hide" id="questions">
             <div class="questions container">
                 <div id="question"></div>
                 <div class="btn-grid" id="options"></div>
             </div>
         </div>
+        <!--hidden container to display end and score aswell as initial input for highscore-->
         <div class="hide" id="end-container">
             <div class=" end container">
                 <h1 id="end-title">All done!</h1>
