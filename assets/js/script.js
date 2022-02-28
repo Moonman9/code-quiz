@@ -80,14 +80,14 @@ function countDown()
   }
 }
 //game ending features
-function endGame() 
+function endGame()
 {
   clearInterval(timerId);
-  var endScreen = document.getElementById("end-container");
-  endScreen.removeAttribute("class");
-  var scoreEl = document.getElementById("score");
+  var endScreen = document.getElementById('end-container');
+  endScreen.removeAttribute('class');
+  var scoreEl = document.getElementById('score');
   scoreEl.textContent = time;
-  questionsEl.setAttribute("class", "hide");
+  questionsEl.setAttribute('class', 'hide');
 }
 //save highscore and attach to initials 
 function saveHighscore() 
