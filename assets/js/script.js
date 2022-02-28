@@ -1,4 +1,4 @@
-// DOM elements
+// DOM elements to connect actions with html document to be viewed
 var questionsEl = document.querySelector("#questions");
 var timerEl = document.querySelector("#time");
 var optionsEl = document.querySelector("#options");
@@ -10,19 +10,22 @@ var currentQuestionIndex = 0;
 var time = 150;
 var timerId;
 
-//transitions
+//at startGame function hides intro screen and reveals question container
 function startGame() {
   var introScreen = document.getElementById("intro-container");
   introScreen.setAttribute("class", "hide");
   questionsEl.removeAttribute("class");
 
-  // start timer
+  // start timer for every second sets time to  timer DOM
   timerId = setInterval(countDown, 1000);
   timerEl.textContent = time;
 
+  // starts questions function
   getQuestions();
 }
-//pull questions for list
+//function to pull questions in order 
+//sets question to dom element in order
+// creates buttons with number value for all the possible answers
 function getQuestions() 
 {
   var currentQuestion = questions[currentQuestionIndex];
@@ -39,7 +42,7 @@ function getQuestions()
     optionsEl.appendChild(choiceNode);
   });
 }
-//check answer for penalty and informs
+//check answer for penalty and informs by changing body color  
 function answerClick()
 {
   if (this.value !== questions[currentQuestionIndex].answer) 
@@ -55,12 +58,13 @@ function answerClick()
   {
     bodyEl.setAttribute('class', 'correct')
   }
+  // makes body original color after a second
   setTimeout(function() 
   {
     bodyEl.removeAttribute('class');
   }, 1000);
   currentQuestionIndex++;
-  //ends game if no more questions
+  //ends the game if there are no more questions
   if (currentQuestionIndex === questions.length) 
   {
     endGame();
@@ -69,7 +73,7 @@ function answerClick()
     getQuestions();
   }
 }
-//check clock and eligebility
+//countdoun clock by 1 and making sure there is still time left on the clock or end the game
 function countDown() 
 {
   time--;
@@ -79,7 +83,8 @@ function countDown()
     endGame();
   }
 }
-//game ending features
+//game ending by hidiung question contianer and conjuring the end container for initials.
+// sets score to the remaing time left
 function endGame()
 {
   clearInterval(timerId);
@@ -89,7 +94,7 @@ function endGame()
   scoreEl.textContent = time;
   questionsEl.setAttribute('class', 'hide');
 }
-//save highscore and attach to initials 
+//save highscore and attach to initials in local storage in highscores to be called
 function saveHighscore() 
 {
     var initials = initialsEl.value.trim();
@@ -102,11 +107,13 @@ function saveHighscore()
         initials: initials
     }; 
     highscores.push(newScore);
-    window.localStorage.setItem("highscores", JSON.stringify(highscores));//local storage
-    window.location.href = "highscore.html";//transition to highscore page
+    //local storage
+    window.localStorage.setItem("highscores", JSON.stringify(highscores));
+    ;//transition to highscore page
+    window.location.href = "highscore.html"
   }
 }
-//enter to save
+//enter key event to save the highscore
 function validEntry(event) 
 {
   if (event.key === 'Enter') 
@@ -114,8 +121,9 @@ function validEntry(event)
     saveHighscore();
   }
 }
-// save initials
+// submit button click fires savehighscore function
 submitBtn.onclick = saveHighscore;
-// initiate game
+// start button click event initiates the startgame function
 startBtn.onclick = startGame;
+// fires  valid entry function on the initials button release
 initialsEl.onkeyup = validEntry;
