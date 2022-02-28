@@ -109,7 +109,7 @@ function saveHighscore()
 //enter to save
 function validEntry(event) 
 {
-  if (event.key === "Enter") 
+  if (event.key === 'Enter') 
   {
     saveHighscore();
   }
